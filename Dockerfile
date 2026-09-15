@@ -16,11 +16,11 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Generate NextAuth secret if not provided
-ENV NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-$(openssl rand -base64 32)}
+# Build the Next.js app
+RUN npm run build
 
 # Expose port
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
