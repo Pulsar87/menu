@@ -60,10 +60,6 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    volumes:
-      - .:/app:z
-      - /app/node_modules
-      - .next:/app/.next:z
     networks:
       - menu_network
 
