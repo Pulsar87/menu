@@ -1,11 +1,22 @@
 ```
 # Dependencies
 node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Database
+prisma/migrations/
+prisma/schema.prisma.bak
 
 # Environment variables
-.env
 .env.local
-.env.*
+.env.production
+.env.development
 
 # Build outputs
 dist/
