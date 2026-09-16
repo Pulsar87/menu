@@ -1,71 +1,50 @@
 ```
-# TypeScript build artifacts
-tsconfig.tsbuildinfo
+# Next.js build output
+.next/
 
 # Dependencies
 node_modules/
 
-# Environment
+# Environment variables
 .env
 .env.local
-*.env.*
+.env.*
 
-# Logs
-*.log
-
-# Editor/IDE
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# Logs
+*.log
+
+# Temporary files
 *.tmp
 
-# Build outputs
+# Build artifacts
 dist/
 build/
-target/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.py.class
-*.py.obj
-
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-*.hprof
-target/
-
-# C/C++
 *.o
 *.obj
+*.exe
+*.dll
 *.so
 *.a
-*.lib
-*.dll
-*.exe
 *.out
-*.ilk
-*.pdb
+*.pyc
+__pycache__/
 
-# Go
-*.o
-*.a
-*.swp
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
 
-# Ruby
-*.gem
-*.rbc
-.bundle/
-vendor/bundle/
+# Python cache
+.mypy_cache/
+.pytest_cache/
 
-# Compression
+# Compressed files
 *.zip
 *.gz
 *.tar
@@ -88,8 +67,4 @@ vendor/bundle/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-
-# System files
-.DS_Store
-Thumbs.db
 ```

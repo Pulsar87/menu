@@ -29,10 +29,10 @@ reviewRoutes.get('/', async (c) => {
   }
 
   const orderBy = sort === 'highest' 
-    ? { rating: 'desc' } 
+    ? { rating: 'desc' as const } 
     : sort === 'lowest'
-    ? { rating: 'asc' }
-    : { createdAt: 'desc' }
+    ? { rating: 'asc' as const }
+    : { createdAt: 'desc' as const }
 
   const reviews = await prisma.review.findMany({
     where: { restaurantId: restaurant.id },
