@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
-import { errorHandler } from './middleware/error-handler'
+import { errorHandler } from '../middleware/error-handler'
 import { restaurantRoutes } from '../routes/restaurant'
 import { menuRoutes } from '../routes/menu'
 import { orderRoutes } from '../routes/order'
