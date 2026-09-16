@@ -1,4 +1,4 @@
-import { Context } from 'hono'
+import { Context, Next } from 'hono'
 
 export class AppError extends Error {
   constructor(
@@ -12,19 +12,23 @@ export class AppError extends Error {
   }
 }
 
-export function errorHandler(err: Error, c: Context) {
-  if (err instanceof AppError) {
+export async function errorHandler(c: Context, next: Next) {
+  try {
+    await next()
+  } catch (err) {
+    if (err instanceof AppError) {
+      return c.json(
+        { error: { code: err.code, message: err.message, details: err.details } },
+        err.status as any
+      )
+    }
+
+    // Log error for debugging
+    console.error('Unhandled error:', err)
+
     return c.json(
-      { error: { code: err.code, message: err.message, details: err.details } },
-      err.status as any
+      { error: { code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' } },
+      500 as any
     )
   }
-
-  // Log error for debugging
-  console.error('Unhandled error:', err)
-
-  return c.json(
-    { error: { code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' } },
-    500 as any
-  )
 }
