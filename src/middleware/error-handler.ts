@@ -16,7 +16,7 @@ export function errorHandler(err: Error, c: Context) {
   if (err instanceof AppError) {
     return c.json(
       { error: { code: err.code, message: err.message, details: err.details } },
-      err.status
+      err.status as any
     )
   }
 
@@ -25,6 +25,6 @@ export function errorHandler(err: Error, c: Context) {
 
   return c.json(
     { error: { code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' } },
-    500
+    500 as any
   )
 }

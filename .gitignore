@@ -18,24 +18,28 @@ prisma/schema.prisma.bak
 .env.production
 .env.development
 
+# Build outputs
+dist/
+build/
+.next/
+out/
+
 # Logs
 *.log
 
 # Temporary files
 *.tmp
-.DS_Store
-Thumbs.db
+*.swp
 
-# IDE
+# IDE files
 .vscode/
 .idea/
 
-# OS
-.DS_Store
-*.swp
-*.swo
+# Prisma
+prisma/migrations/
+prisma/generated/
 
-# Coverage
-coverage/
-.nyc_output/
+# OS generated files
+.DS_Store
+Thumbs.db
 ```
